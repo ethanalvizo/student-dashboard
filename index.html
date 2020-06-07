@@ -23,7 +23,6 @@
   
   <!-- Links for Modal Plugin -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 
 </head>
@@ -53,6 +52,50 @@
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
+          <!-- Content Row -->
+          <div class="d-flex flex-row">
+            
+          </div>
+
+          <!-- Content Row -->
+          <div class="d-flex flex-row">
+
+            <div class="col-5 mr-2">
+                <div class="card">
+                  <div class="card-body">
+
+                    <div class="row">
+                      <h5>Overall Feeling:</h5>
+                      <form id="smileys">
+                        <input type="radio" name="smiley" value="sad" class="sad">
+                        <input type="radio" name="smiley" value="neutral" class="neutral">
+                        <input type="radio" name="smiley" value="happy" class="happy" checked="checked">
+                      </form>
+                    </div>
+      
+                    <div class="row">
+                      <h5>Last Week's Goal: Focus on your <span id="oldWeeklyGoal">fitness</span> </h5>
+                    </div>
+      
+                    <div class="row">
+                      <h5>This Week's Goal Focus on your <span id="newWeeklyGoal">professional</span> </h5>
+                    </div> 
+
+                  </div>
+                </div>
+            </div>
+
+            <div class="flex-fill">
+              <div class="container-fluid card">
+                <div class="card-body">
+                  <canvas id="myAreaChart"></canvas>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+
+          <hr>
 
           <!-- Content Row-->
           <div class="d-flex flex-row">
@@ -62,7 +105,7 @@
               <div class="slidecontainer">
 
                 <p>Professional</p>
-                <div class="d-flex flex-row" >
+                <div class="d-flex flex-row">
                   <input type="range" min="1" max="5" value="5" class="slider" id="professionalRange">
                   <p class="d-flex justify-content-center ml-2"> <span id="professionalValue"></span></p>
                 </div>
