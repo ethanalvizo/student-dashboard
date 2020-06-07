@@ -14,6 +14,7 @@
   <!-- Custom fonts for Bootstrap template-->
   <link href="all.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 
   <!-- Custom styles for Bootstrap template-->
   <link href="sb-admin-2.css" rel="stylesheet">
@@ -39,7 +40,7 @@
       <div id="content">
 
         <!-- Topbar -->
-        <nav class="navbar navbar-expand topbar mb-4 static-top shadow" id="">
+        <nav class="navbar navbar-expand topbar mb-4 static-top shadow">
 
           <!-- Sidebar Toggle (Topbar) -->
           <div class="d-sm-flex align-items-center justify-content-between mr-auto ml-md-2 my-2 my-md-0 mw-100">
@@ -53,39 +54,52 @@
         <div class="container-fluid">
 
           <!-- Content Row -->
-          <div class="d-flex flex-row">
-            
+          <div class="clearfix mb-3">
+            <div class="chip float-left">
+              <img src="https://www.w3schools.com/howto/img_avatar.png" alt="Person" width="96" height="96">
+              Cole Powers
+            </div>
+  
+            <div class="float-right">
+              <button type="button" class="btn btn-danger" data-container="body" data-toggle="popover" data-placement="left" data-content="You have been neglecting your family. Make sure to reach out!">
+                1
+              </button>
+            </div>
           </div>
 
           <!-- Content Row -->
           <div class="d-flex flex-row">
-
             <div class="col-5 mr-2">
                 <div class="card">
-                  <div class="card-body">
+                  <div class="card-body ml-3">
 
-                    <div class="row">
-                      <h5>Overall Feeling:</h5>
-                      <form id="smileys">
-                        <input type="radio" name="smiley" value="sad" class="sad">
-                        <input type="radio" name="smiley" value="neutral" class="neutral">
-                        <input type="radio" name="smiley" value="happy" class="happy" checked="checked">
-                      </form>
-                    </div>
-      
-                    <div class="row">
-                      <h5>Last Week's Goal: Focus on your <span id="oldWeeklyGoal">fitness</span> </h5>
-                    </div>
-      
-                    <div class="row">
-                      <h5>This Week's Goal Focus on your <span id="newWeeklyGoal">professional</span> </h5>
-                    </div> 
+                    <table class="ml-n2">
+                      <tr>
+                        <td><h5 class="border rounded bg-light p-1">Overall Feeling:</h5></td>
+                        <td><form id="smileys">
+                          <input type="radio" name="smiley" value="sad" class="sad">
+                          <input type="radio" name="smiley" value="neutral" class="neutral">
+                          <input type="radio" name="smiley" value="happy" class="happy" checked="checked">
+                        </form></td>
+                      </tr>
+                    </table>
+
+                    <table class="ml-n2">
+                      <tr>
+                        <td><i class="fas fa-times mr-2"></i></td>
+                        <td><h5>Last Week's Goal: Focus on your <span id="oldWeeklyGoal">fitness</span> </h5></td>
+                      </tr>
+                      <tr>
+                        <td><i class="fas fa-tasks mr-1 ml-n1"></i></td>
+                        <td><h5 class="">This Week's Goal: Focus on your <span id="newWeeklyGoal">professional</span> </h5></td>
+                      </tr>
+                    </table>
 
                   </div>
                 </div>
             </div>
 
-            <div class="flex-fill">
+            <div class="flex-fill mx-3">
               <div class="container-fluid card">
                 <div class="card-body">
                   <canvas id="myAreaChart"></canvas>
@@ -116,7 +130,7 @@
 
                 <p>Fitness</p>
                 <div class="d-flex flex-row">
-                  <input type="range" min="1" max="5" value="50" class="slider" id="fitnessRange">
+                  <input type="range" min="1" max="5" value="4" class="slider" id="fitnessRange">
                   <p class="d-flex justify-content-center ml-2"><span id="fitnessValue"></span></p>
                 </div>
 
@@ -126,7 +140,7 @@
 
                 <p>Family Time</p>
                 <div class="d-flex flex-row">
-                  <input type="range" min="1" max="5" value="50" class="slider" id="familyTimeRange" >
+                  <input type="range" min="1" max="5" value="2" class="slider" id="familyTimeRange" >
                   <p class="d-flex justify-content-center ml-2"><span id="familyTimeValue"></span></p>
                 </div>
 
@@ -136,7 +150,7 @@
 
                 <p>Personal Time</p>
                 <div class="d-flex flex-row">
-                  <input type="range" min="1" max="5" value="50" class="slider" id="personalTimeRange">
+                  <input type="range" min="1" max="5" value="3" class="slider" id="personalTimeRange">
                   <p class="d-flex justify-content-center ml-2"><span id="personalTimeValue"></span></p>
                 </div>
 
@@ -146,20 +160,24 @@
 
                 <p>Spirituality</p>
                 <div class="d-flex flex-row">
-                  <input type="range" min="1" max="5" value="50" class="slider" id="spiritualityRange">
+                  <input type="range" min="1" max="5" value="1" class="slider" id="spiritualityRange">
                   <p class="d-flex justify-content-center ml-2"><span id="spiritualityValue"></span></p>
                 </div>
 
               </div>
 
-              <div class="slidecontainer">
+              <div class="slidecontainer mb-1">
 
                 <p>Guitar</p>
                 <div class="d-flex flex-row">
-                  <input type="range" min="1" max="5" value="50" class="slider" id="guitarRange">
+                  <input type="range" min="1" max="5" value="3" class="slider" id="guitarRange">
                   <p class="d-flex justify-content-center ml-2"><span id="guitarValue"></span></p>
                 </div>
 
+              </div>
+
+              <div>
+                <button class="rounded border">+Add Domain</button>
               </div>
             </div>
 
