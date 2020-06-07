@@ -1,4 +1,4 @@
-//radar
+// Radar Chart
 var ctxR = document.getElementById("radarChart").getContext('2d');
 var myRadarChart = new Chart(ctxR, {
     type: 'radar',
@@ -108,3 +108,9 @@ output6.innerHTML = slider6.value; // Display the default slider value
 slider6.oninput = function() {
   output6.innerHTML = this.value;
 }
+
+
+// Smiley Face Scale
+$('#smileys input').on('click', function() {
+	$('#result').html($(this).val());
+});
