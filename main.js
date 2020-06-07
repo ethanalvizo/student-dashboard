@@ -114,3 +114,8 @@ slider6.oninput = function() {
 $('#smileys input').on('click', function() {
 	$('#result').html($(this).val());
 });
+
+// Pop-overs Enabled
+$(function () {
+    $('[data-toggle="popover"]').popover()
+  })
