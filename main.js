@@ -20,7 +20,7 @@ var myRadarChart = new Chart(ctxR, {
                 label: "Last Week",
                 data: [2.5, 2.5, 3, 3.5, 1, 4],
                 backgroundColor: [
-                'rgba(0, 250, 220, .2)',
+                    'rgba(0, 250, 220, .2)',
                 ],
                 borderColor: [
                     'rgba(0, 213, 132, .7)',
@@ -38,7 +38,6 @@ var myRadarChart = new Chart(ctxR, {
             ticks: {
                 beginAtZero: true,
                 stepSize: 1
-
             }
         }
         
@@ -110,12 +109,51 @@ slider6.oninput = function() {
 }
 
 
+
 // Smiley Face Scale
 $('#smileys input').on('click', function() {
 	$('#result').html($(this).val());
 });
 
+
+
 // Pop-overs Enabled
 $(function () {
     $('[data-toggle="popover"]').popover()
   })
+
+
+
+  // Read from Excel Sheet
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/jszip.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/xlsx.js"></script>
+  <script>
+    var ExcelToJSON = function() {
+
+    this.parseExcel = function(file) {
+      var reader = new FileReader();
+
+        reader.onload = function(e) {
+          var data = e.target.result;
+          var workbook = XLSX.read(data, {
+            type: 'binary'
+          });
+
+          workbook.SheetNames.forEach(function(sheetName) {
+            // Here is your object
+            var XL_row_object = XLSX.utils.sheet_to_row_object_array(workbook.Sheets[sheetName]);
+            var json_object = JSON.stringify(XL_row_object);
+            console.log(json_object);
+
+          })
+
+        };
+
+        reader.onerror = function(ex) {
+          console.log(ex);
+        };
+
+        reader.readAsBinaryString(file);
+      };
+    };
+  </script>
